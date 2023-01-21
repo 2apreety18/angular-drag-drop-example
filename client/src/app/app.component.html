@@ -1,0 +1,11 @@
+
+<div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+  <div class="box" *ngFor="let letter of letters" cdkDrag>{{letter}}</div>
+</div>
+
+<div style="height: 5rem; width: 100%;"></div>
+
+<div cdkDropList cdkDropListOrientation="horizontal" class="list row" (cdkDropListDropped)="drop($event)">
+  <div class="box" *ngFor="let letter of letters" cdkDrag>{{letter}}</div>
+</div>
+
