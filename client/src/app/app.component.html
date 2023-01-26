@@ -1,11 +1,40 @@
+<!-- <div class="container">
+    <span> Container Id: </span> {{containerId}}
+    <div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+      <div class="box" *ngFor="let letter of letters" cdkDrag>{{letter}}</div>
+    </div>
 
-<div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
-  <div class="box" *ngFor="let letter of letters" cdkDrag>{{letter}}</div>
+    <div style="height: 5rem; width: 100%;"></div>
+
+    <div cdkDropList cdkDropListOrientation="horizontal" class="list row" (cdkDropListDropped)="drop($event)">
+      <div class="box" *ngFor="let letter of letters" cdkDrag>{{letter}}</div>
+    </div>
+</div> -->
+
+<div class="example-container">
+  <h2>Fruits</h2>
+
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="fruits"
+    [cdkDropListConnectedTo]="[doneList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let eachFruit of fruits" cdkDrag>{{eachFruit}}</div>
+  </div>
 </div>
 
-<div style="height: 5rem; width: 100%;"></div>
+<div class="example-container">
+  <h2>Fast Foods</h2>
 
-<div cdkDropList cdkDropListOrientation="horizontal" class="list row" (cdkDropListDropped)="drop($event)">
-  <div class="box" *ngFor="let letter of letters" cdkDrag>{{letter}}</div>
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="fastFoods"
+    [cdkDropListConnectedTo]="[todoList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let food of fastFoods" cdkDrag>{{food}}</div>
+  </div>
 </div>
-
