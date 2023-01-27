@@ -1,40 +1,73 @@
-<!-- <div class="container">
-    <span> Container Id: </span> {{containerId}}
-    <div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
-      <div class="box" *ngFor="let letter of letters" cdkDrag>{{letter}}</div>
-    </div>
-
-    <div style="height: 5rem; width: 100%;"></div>
-
-    <div cdkDropList cdkDropListOrientation="horizontal" class="list row" (cdkDropListDropped)="drop($event)">
-      <div class="box" *ngFor="let letter of letters" cdkDrag>{{letter}}</div>
-    </div>
-</div> -->
+<div style="margin-top:0;height: 3rem; width: 100%;">
+  <!-- <span> Container Id: </span> {{containerId}} -->
+</div>
 
 <div class="example-container">
   <h2>Fruits</h2>
+  
+  <!-- 
+    1. adding the cdkDrag directive to elements to make it draggable -> show
+    2. take a div list, add cdkDropList to contarin the movement area -> show
+    3. iterate all the item in the list and property bind cdkDropListData to fruits array
+    4. event binding to cdkDropListDropped
+    5. Update ts file with moveItemInArray 
+    6. giving unique identity to the list
+    7. property binding to cdkDropListConnectedTo
+    8. update ts with transferArrayItem
+  -->
+ 
+  <!-- a div showing the first element from the fruits array -->
+  <div class="example-box">{{fruits[0]}}</div>
 
-  <div
-    cdkDropList
-    #todoList="cdkDropList"
-    [cdkDropListData]="fruits"
-    [cdkDropListConnectedTo]="[doneList]"
-    class="example-list"
-    (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let eachFruit of fruits" cdkDrag>{{eachFruit}}</div>
-  </div>
-</div>
 
-<div class="example-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="example-container">
   <h2>Fast Foods</h2>
 
-  <div
+  <div class="example-list"
     cdkDropList
-    #doneList="cdkDropList"
+    #fastFoodList="cdkDropList"
     [cdkDropListData]="fastFoods"
-    [cdkDropListConnectedTo]="[todoList]"
-    class="example-list"
+    [cdkDropListConnectedTo]="[fruitList]"
     (cdkDropListDropped)="drop($event)">
     <div class="example-box" *ngFor="let food of fastFoods" cdkDrag>{{food}}</div>
   </div>
-</div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div 
+  class="example-list"
+  cdkDropList
+  [cdkDropListData]="fruits"
+  (cdkDropListDropped)="drop($event)"
+
+  #fruitList = "cdkDropList"
+  [cdkDropListConnectedTo]="fastFoodList"
+  >
+    <div class="example-box" *ngFor ="let eachFruit of fruits"  cdkDrag>{{eachFruit}}</div>
+  </div>
+</div> -->
